@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <style>
+         body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: white;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6b8e23;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .menu a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+        }
+        .navbar .menu a.shop {
+            position: relative;
+        }
+        .navbar .menu a.shop::after {
+            position: absolute;
+            top: -10px;
+            right: -20px;
+            color: white;
+            font-size: 10px;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .navbar .icons {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .icons i {
+            font-size: 18px;
+            color: black;
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+        }
+        .hero .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .hero .content h1 {
+            font-size: 48px;
+            margin: 10px 0;
+        }
+        .hero .content p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .hero .content .btn {
+            background-color: white;
+            color: black;
+            padding: 10px 20px; 
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px;
+        }
+        .text-section {
+            flex: 1;
+            padding: 20px;
+        }
+        .text-section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .text-section p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .text-section .shop-now {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .image-section {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .image-section img {
+            width: 30%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .tea {
+            width: 100%;
+            text-align: center;
+            padding: 50px 0;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+           
+        }
+        .subtitle {
+            font-size: 16px;
+            color: #777;
+           
+        }
+        .products {
+            display: flex;
+            justify-content: space-between;
+        }
+        .product {
+            width: 22%;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0 10px;
+        }
+        .product-price {
+            font-size: 16px;
+            color: #777;
+            text-decoration: line-through;
+            margin-right: 10px;
+        }
+        .product-sale-price {
+            font-size: 16px;
+            color: #6b8e23;
+            font-weight: bold;
+        }
+        .coffee {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .card {
+            position: relative;
+            overflow: hidden;
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .text {
+            text-align: center;
+        }
+        .text h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #4CAF50;
+        }
+        .text hr {
+            width: 50px;
+            border: 1px solid #4CAF50;
+            margin: 10px auto;
+        }
+        .cont {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .title::after {
+            width: 50px;
+            height: 2px;
+            background-color: #000000;
+            margin: 10px auto 0;
+        }
+        .deals {
+            display: flex;
+            justify-content: space-between;
+        }
+        .deal-item {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            width: 48%;
+            box-sizing: border-box;
+        }
+        .deal-item img {
+            width: 100%;
+            height: auto;
+        }
+        .deal-item .new {
+            padding: 5px 10px;
+            font-size: 12px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .deal-item h3 {
+            font-size: 18px;
+            margin: 20px 0 10px;
+        }
+        .deal-item .price {
+            color: #000000;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .deal-item .old-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-right: 10px;
+        }
+        .deal-item p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+       
+        .deal-item .actions button {
+            color: #000000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .deal-item .actions i {
+            font-size: 20px;
+            color: #000;
+            cursor: pointer;
+        }
+        .testimonials {
+            padding: 50px 0;
+            background-color: #eaefe6;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .testimonials h1 {
+            color: #6b8e23;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .stars {
+            color: yellow;
+            margin-bottom: 20px;
+        }
+        .testimonial-text {
+            color: #333;
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+        
+        .profile-info h3 {
+            font-size: 20px;
+            color: #333;
+            text-align: center;
+        }
+        .profile-info p {
+            margin: 0;
+            color: #666;
+            text-align: center;
+            font-size: 16px;
+        }
+        .Our Blog {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .blog {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0;
+        }
+        .header hr {
+            width: 50px;
+            border: 2px solid #6b8e23;
+            margin: 10px auto 0;
+        }
+        .content01 {
+            display: flex;
+            align-items: center;
+        }
+        .text-content01 {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .text-content01 .read-more {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #000;
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .image-content01 {
+            flex: 1;
+        }
+        .bag {
+            display: flex;
+            align-items: center;
+            max-width: 900px;
+            margin: 20px;
+        }
+        .image {
+            flex: 1;
+        }
+        .image img {
+            width: 100%;
+            height: auto;
+        }
+        .cup {
+            flex: 1;
+            padding: 20px;
+        }
+        .cup h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+       
+        .cup button {
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #000;
+            background-color: #fff;
+           
+            cursor: pointer;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 100px;
+            background-color: #f9f9f9;
+        }
+        .footer-column {
+            flex: 1;
+            margin: 0 20px;
+        }
+        .footer-column h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .footer-column h3::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 2px;
+            background-color: #000;
+            margin-top: 5px;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #000;
+        }
+        .footer-logo {
+            font-size: 36px;
+            font-family: 'Georgia', serif;
+            color: #6b8e23;
+        }
+        .footer-logo p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        .footer-social {
+            margin-top: 20px;
+        }
+        .footer-social a {
+            margin-right: 10px;
+            color: #000;
+            font-size: 20px;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-top: 1px solid #eaeaea;
+        }
+        .footer-bottom p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .footer-bottom img {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+         Teami
+        </div>
+        <div class="menu">
+         <a href="#">
+          Home
+         </a>
+         <a class="" href="teashop.html">
+          Shop
+         </a>
+         <a href="#">
+          Featured
+         </a>
+         <a href="#">
+          Pages
+         </a>
+         <a href="#">
+          Blogs
+         </a>
+        </div>
+        <div class="icons">
+         <i class="fas fa-search">
+         </i>
+         <i class="fas fa-user">
+         </i>
+         <i class="fas fa-heart">
+         </i>
+         <i class="fas fa-shopping-bag">
+         </i>
+        </div>
+       </div>
+       <div class="hero">
+        <img alt="" height="1080" src="img/tea1.webp" width="1920"/>
+        <div class="content">
+         <p>
+          Tea Store
+         </p>
+         <h1>
+          Delicious Premium Tea Here
+         </h1>
+         <a class="btn" href="#">
+          Shop Now
+         </a>
+        </div>
+       </div>
+       <div class="container">
+        <div class="text-section">
+         <h1>
+          The Story Behind Our Ocha House
+         </h1>
+         <p>
+          We also specialize in bubble tea, a beverage originating from Taiwan that combines freshly brewed teas with a large variety of exotic natural fruit concentrates, served cold with delicious chewy tapioca pearls.
+         </p>
+         <a class="shop-now" href="#">
+          SHOP NOW
+         </a>
+        </div>
+        <div class="image-section">
+         <img alt="" height="400" src="img/tea2.webp" width="300"/>
+         <img alt="" height="400" src="img/tea3.webp" width="300"/>
+         <img alt="" height="400" src="img/tea4.webp" width="300"/>
+        </div>
+       </div>
+       <div class="tea">
+        <div class="title">
+         BEST SELLER
+        </div>
+        <div class="subtitle">
+         Best Seller Product This Week!
+        </div>
+        <div class="products">
+         <div class="product">
+          <img alt="" height="300" src="img/tea5.webp" width="300"/>
+          <div class="product-name">
+           Iced Peach
+          </div>
+          <div class="product-sale-price">
+           $25.00
+          </div>
+         </div>
+         <div class="product">
+          <img alt="" height="300" src="img/tea6.webp" width="300"/>
+          <div class="product-name">
+           Jin Xuan
+          </div>
+          <div>
+           <span class="product-price">
+            $22.00
+           </span>
+           <span class="product-sale-price">
+            $20.00
+           </span>
+          </div>
+         </div>
+         <div class="product">
+          <img alt="" height="300" src="img/tea7.webp" width="300"/>
+          <div class="product-name">
+           Lan Gui Ren
+          </div>
+          <div>
+           <span class="product-price">
+            $25.00
+           </span>
+           <span class="product-sale-price">
+            $23.00
+           </span>
+          </div>
+         </div>
+         <div class="product">
+          <img alt="" height="300" src="img/tea8.webp" width="300"/>
+          <div class="product-name">
+           Lan Yin
+          </div>
+          <div>
+           <span class="product-price">
+            $25.00
+           </span>
+           <span class="product-sale-price">
+            $23.00
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="tea">
+        <div class="products">
+            <div class="product">
+             <img alt="" height="300" src="img/tea9.webp" width="300"/>
+             <div class="product-name">
+              Iced Peach
+             </div>
+             <div class="product-sale-price">
+              $25.00
+             </div>
+            </div>
+            <div class="product">
+             <img alt="" height="300" src="img/tea10.webp" width="300"/>
+             <div class="product-name">
+              Jin Xuan
+             </div>
+             <div>
+              <span class="product-price">
+               $22.00
+              </span>
+              <span class="product-sale-price">
+               $20.00
+              </span>
+             </div>
+            </div>
+            <div class="product">
+             <img alt="" height="300" src="img/tea11.webp" width="300"/>
+             <div class="product-name">
+              Lan Gui Ren
+             </div>
+             <div>
+              <span class="product-price">
+               $25.00
+              </span>
+              <span class="product-sale-price">
+               $23.00
+              </span>
+             </div>
+            </div>
+            <div class="product">
+             <img alt="" height="300" src="img/tea12.webp" width="300"/>
+             <div class="product-name">
+              Lan Yin
+             </div>
+             <div>
+              <span class="product-price">
+               $25.00
+              </span>
+              <span class="product-sale-price">
+               $23.00
+              </span>
+             </div>
+            </div>
+           </div>
+          </div>
+       </div>
+       <div class="coffee">
+        <div class="card">
+         <img alt="" height="200" src="img/tea13.webp" width="400"/>
+         <div class="overlay">
+          <div class="text">
+           <hr/>
+           <h2>
+            Spring Sale
+           </h2>
+           <hr/>
+          </div>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="" height="200" src="img/tea14.webp" width="400"/>
+         <div class="overlay">
+          <div class="text">
+           <hr/>
+           <h2>
+            New Arrival Sale
+           </h2>
+           <hr/>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="cont">
+        <div class="title">
+         DEALS OF THE DAY
+        </div>
+        <div class="deals">
+         <div class="deal-item">
+          
+          <img alt="" height="200" src="img/tea7.webp" width="300"/>
+          <h3>
+           Sollicitudin Quis
+          </h3>
+          <div class="price">
+           $20.00
+          </div>
+          <p>
+           Things You Need To Know There are many variations of...
+          </p>
+          <div class="actions">
+           <button>
+            ADD TO CART
+           </button>
+           <i class="fa-regular fa-heart"></i>
+           </i>
+           <i class="fa-solid fa-magnifying-glass"></i>
+           </i>
+          </div>
+         </div>
+         <div class="deal-item">
+          
+          <img alt="" height="200" src="img/tea8.webp" width="300"/>
+          <h3>
+           Wu Yi Rou
+          </h3>
+          <div class="price">
+           <span class="old-price">
+            $25.00
+           </span>
+           $22.00
+          </div>
+          <p>
+           Things You Need To Know There are many variations of...
+          </p>
+          <div class="actions">
+           <button>
+            ADD TO CART
+           </button>
+           <i class="fa-regular fa-heart"></i>
+           </i>
+           <i class="fa-solid fa-magnifying-glass"></i>
+           </i>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="testimonials">
+        <h1>
+         Testimonials
+        </h1>
+        <div class="stars">
+            <i class="fa-solid fa-star"></i>
+         </i>
+         <i class="fa-solid fa-star"></i>
+         </i>
+         <i class="fa-solid fa-star"></i>
+         </i>
+         <i class="fa-solid fa-star"></i>
+         </i>
+         <i class="fa-solid fa-star"></i>
+         </i>
+        </div>
+        <div class="testimonial-text">
+         Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep screen violence joints symptoms x-ray...
+        </div>
+        <div class="profile">
+         <img alt="" height="80" src="img/tea15.jpg" width="80"/>
+        </div>
+         <div class="profile-info">
+          <h3>
+           AMILY
+          </h3>
+          <p>
+           Ann Smith
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="Our Blog">
+        <div class="blog">
+         <h1>
+          OUR BLOG
+         </h1>
+         <hr/>
+        </div>
+        <div class="content01">
+         <div class="text-content01">
+          <h2>
+           Latest News Are On Top All Times
+          </h2>
+          <p>
+           I got my first premium designer bag when I was in middle school. It was something I wished for, pined for, dreamed for and worked hard for. As soon as...
+          </p>
+          <a class="read-more" href="#">
+           READ MORE
+          </a>
+         </div>
+         <div class="image-content01">
+          <img alt="" height="400" src="img/tea16.webp" width="600"/>
+         </div>
+        </div>
+       </div>
+       <div class="bag">
+        <div class="image">
+         <img alt="" height="" src="img/tea17.webp" width="100%"/>
+        </div>
+        <div class="cup">
+         <h2>
+          What We Need To Know
+         </h2>
+         <p>
+          I got my first premium designer bag when I was in middle school. It was something I wished for, pined for, dreamed for and worked hard for. As soon as...
+         </p>
+         <button>
+          READ MORE
+         </button>
+        </div>
+       </div>
+       <div class="footer">
+        <div class="footer-column">
+         <div class="footer-logo">
+          Teami
+         </div>
+         <p>
+          Sophisticated simplicity for the independent mind.
+         </p>
+         <div class="footer-social">
+          <a href="#">
+            <i class="fa-brands fa-twitter"></i>
+           </i>
+          </a>
+          <a href="#">
+            <i class="fa-brands fa-dribbble"></i>
+          </a>
+          <a href="#">
+            <i class="fa-brands fa-behance"></i>
+          </a>
+          <a href="#">
+           <i class="fa-brands fa-instagram"></i>
+          </a>
+         </div>
+        </div>
+        <div class="footer-column">
+         <h3>
+          Help &amp; Information
+         </h3>
+         <ul>
+          <li>
+           <a href="#">
+            About Us
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Privacy Policy
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Terms &amp; Conditions
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Products Return
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Wholesale Policy
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="footer-column">
+         <h3>
+          About Us
+         </h3>
+         <ul>
+          <li>
+           <a href="#">
+            Pagination
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Terms &amp; Conditions
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Contact
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Accessories
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Home Page
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="footer-column">
+         <h3>
+          Categories
+         </h3>
+         <ul>
+          <li>
+           <a href="#">
+            Menu items
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Help Center
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Address Store
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Privacy Policy
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            HomePage
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="footer-bottom">
+        <p>
+         © Copyright 2024 | Teami By EngoTheme. Powered by Shopify.
+        </p>
+        <img alt="" height="20" src="img/108.webp" width="40%"/>
+        
+</body>
+</html>

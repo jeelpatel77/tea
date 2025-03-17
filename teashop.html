@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <style>
+                 body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: white;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6b8e23;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .menu a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+        }
+        .navbar .menu a.shop {
+            position: relative;
+        }
+        .navbar .menu a.shop::after {
+            position: absolute;
+            top: -10px;
+            right: -20px;
+            color: white;
+            font-size: 10px;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .navbar .icons {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .icons i {
+            font-size: 18px;
+            color: black;
+        }
+        .shop {
+            background-image: url('img/tea18.webp');
+            background-size: cover;
+            padding: 50px 20px;
+            text-align: center;
+            color: rgb(236, 232, 232);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: bold;
+          color: white;
+        }
+        .breadcrumb {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #f2ecec;
+        }
+        .breadcrumb a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .tea {
+            width: 100%;
+            text-align: center;
+            padding: 50px 0;
+        }
+        .products {
+            display: flex;
+            justify-content: space-between;
+        }
+        .product {
+            width: 22%;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0 10px;
+        }
+        .product-price {
+            font-size: 16px;
+            color: #777;
+            text-decoration: line-through;
+            margin-right: 10px;
+        }
+        .product-sale-price {
+            font-size: 16px;
+            color: #6b8e23;
+            font-weight: bold;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 100px;
+            background-color: #f9f9f9;
+        }
+        .footer-column {
+            flex: 1;
+            margin: 0 20px;
+        }
+        .footer-column h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .footer-column h3::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 2px;
+            background-color: #000;
+            margin-top: 5px;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #000;
+        }
+        .footer-logo {
+            font-size: 36px;
+            font-family: 'Georgia', serif;
+            color: #6b8e23;
+        }
+        .footer-logo p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        .footer-social {
+            margin-top: 20px;
+        }
+        .footer-social a {
+            margin-right: 10px;
+            color: #000;
+            font-size: 20px;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-top: 1px solid #eaeaea;
+        }
+        .footer-bottom p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .footer-bottom img {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+         Teami
+        </div>
+        <div class="menu">
+         <a href="tea.html">
+          Home
+         </a>
+         <a class="" href="#">
+          Shop
+         </a>
+         <a href="teaFeatured.html">
+          Featured
+         </a>
+         <a href="#">
+          Pages
+         </a>
+         <a href="#">
+          Blogs
+         </a>
+        </div>
+        <div class="icons">
+         <i class="fas fa-search">
+         </i>
+         <i class="fas fa-user">
+         </i>
+         <i class="fas fa-heart">
+         </i>
+         <i class="fas fa-shopping-bag">
+         </i>
+        </div>
+       </div>
+       <div class="shop">
+        <h1>Products</h1>
+        <div class="breadcrumb">
+            <a href="#">Home</a> &gt; <a href="#">Products</a>
+        </div>
+    </div>
+    <div class="tea">
+        <div class="products">
+            <div class="product">
+             <img alt="" height="300" src="img/tea5.webp" width="300"/>
+             <div class="product-name">
+              Iced Peach
+             </div>
+             <div class="product-sale-price">
+              $25.00
+             </div>
+            </div>
+            <div class="product">
+             <img alt="" height="300" src="img/tea6.webp" width="300"/>
+             <div class="product-name">
+              Jin Xuan
+             </div>
+             <div>
+              <span class="product-price">
+               $22.00
+              </span>
+              <span class="product-sale-price">
+               $20.00
+              </span>
+             </div>
+            </div>
+            <div class="product">
+             <img alt="" height="300" src="img/tea7.webp" width="300"/>
+             <div class="product-name">
+              Lan Gui Ren
+             </div>
+             <div>
+              <span class="product-price">
+               $25.00
+              </span>
+              <span class="product-sale-price">
+               $23.00
+              </span>
+             </div>
+            </div>
+            <div class="product">
+             <img alt="" height="300" src="img/tea8.webp" width="300"/>
+             <div class="product-name">
+              Lan Yin
+             </div>
+             <div>
+              <span class="product-price">
+               $25.00
+              </span>
+              <span class="product-sale-price">
+               $23.00
+              </span>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="tea">
+            <div class="products">
+                <div class="product">
+                 <img alt="" height="300" src="img/tea5.webp" width="300"/>
+                 <div class="product-name">
+                  Iced Peach
+                 </div>
+                 <div class="product-sale-price">
+                  $25.00
+                 </div>
+                </div>
+                <div class="product">
+                 <img alt="" height="300" src="img/tea6.webp" width="300"/>
+                 <div class="product-name">
+                  Jin Xuan
+                 </div>
+                 <div>
+                  <span class="product-price">
+                   $22.00
+                  </span>
+                  <span class="product-sale-price">
+                   $20.00
+                  </span>
+                 </div>
+                </div>
+                <div class="product">
+                 <img alt="" height="300" src="img/tea7.webp" width="300"/>
+                 <div class="product-name">
+                  Lan Gui Ren
+                 </div>
+                 <div>
+                  <span class="product-price">
+                   $25.00
+                  </span>
+                  <span class="product-sale-price">
+                   $23.00
+                  </span>
+                 </div>
+                </div>
+                <div class="product">
+                 <img alt="" height="300" src="img/tea8.webp" width="300"/>
+                 <div class="product-name">
+                  Lan Yin
+                 </div>
+                 <div>
+                  <span class="product-price">
+                   $25.00
+                  </span>
+                  <span class="product-sale-price">
+                   $23.00
+                  </span>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="tea">
+                <div class="products">
+                    <div class="product">
+                     <img alt="" height="300" src="img/tea5.webp" width="300"/>
+                     <div class="product-name">
+                      Iced Peach
+                     </div>
+                     <div class="product-sale-price">
+                      $25.00
+                     </div>
+                    </div>
+                    <div class="product">
+                     <img alt="" height="300" src="img/tea6.webp" width="300"/>
+                     <div class="product-name">
+                      Jin Xuan
+                     </div>
+                     <div>
+                      <span class="product-price">
+                       $22.00
+                      </span>
+                      <span class="product-sale-price">
+                       $20.00
+                      </span>
+                     </div>
+                    </div>
+                    <div class="product">
+                     <img alt="" height="300" src="img/tea7.webp" width="300"/>
+                     <div class="product-name">
+                      Lan Gui Ren
+                     </div>
+                     <div>
+                      <span class="product-price">
+                       $25.00
+                      </span>
+                      <span class="product-sale-price">
+                       $23.00
+                      </span>
+                     </div>
+                    </div>
+                    <div class="product">
+                     <img alt="" height="300" src="img/tea8.webp" width="300"/>
+                     <div class="product-name">
+                      Lan Yin
+                     </div>
+                     <div>
+                      <span class="product-price">
+                       $25.00
+                      </span>
+                      <span class="product-sale-price">
+                       $23.00
+                      </span>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="footer">
+                    <div class="footer-column">
+                     <div class="footer-logo">
+                      Teami
+                     </div>
+                     <p>
+                      Sophisticated simplicity for the independent mind.
+                     </p>
+                     <div class="footer-social">
+                      <a href="#">
+                        <i class="fa-brands fa-twitter"></i>
+                       </i>
+                      </a>
+                      <a href="#">
+                        <i class="fa-brands fa-dribbble"></i>
+                      </a>
+                      <a href="#">
+                        <i class="fa-brands fa-behance"></i>
+                      </a>
+                      <a href="#">
+                       <i class="fa-brands fa-instagram"></i>
+                      </a>
+                     </div>
+                    </div>
+                    <div class="footer-column">
+                     <h3>
+                      Help &amp; Information
+                     </h3>
+                     <ul>
+                      <li>
+                       <a href="#">
+                        About Us
+                       </a>
+                      </li>
+                      <li>
+                       <a href="#">
+                        Privacy Policy
+                       </a>
+                      </li>
+                      <li>
+                       <a href="#">
+                        Terms &amp; Conditions
+                       </a>
+                      </li>
+                      <li>
+                       <a href="#">
+                        Products Return
+                       </a>
+                      </li>
+                      <li>
+                       <a href="#">
+                        Wholesale Policy
+                       </a>
+                      </li>
+                     </ul>
+                    </div>
+                    <div class="footer-column">
+                     <h3>
+                      About Us
+                     </h3>
+                     <ul>
+                      <li>
+                       <a href="#">
+                        Pagination
+                       </a>
+                      </li>
+                      <li>
+                       <a href="#">
+                        Terms &amp; Conditions
+                       </a>
+                      </li>
+                      <li>
+                       <a href="#">
+                        Contact
+                       </a>
+                      </li>
+                      <li>
+                       <a href="#">
+                        Accessories
+                       </a>
+                      </li>
+                      <li>
+                       <a href="#">
+                        Home Page
+                       </a>
+                      </li>
+                     </ul>
+                    </div>
+                    <div class="footer-column">
+                     <h3>
+                      Categories
+                     </h3>
+                     <ul>
+                      <li>
+                       <a href="#">
+                        Menu items
+                       </a>
+                      </li>
+                      <li>
+                       <a href="#">
+                        Help Center
+                       </a>
+                      </li>
+                      <li>
+                       <a href="#">
+                        Address Store
+                       </a>
+                      </li>
+                      <li>
+                       <a href="#">
+                        Privacy Policy
+                       </a>
+                      </li>
+                      <li>
+                       <a href="#">
+                        HomePage
+                       </a>
+                      </li>
+                     </ul>
+                    </div>
+                   </div>
+                   <div class="footer-bottom">
+                    <p>
+                     © Copyright 2024 | Teami By EngoTheme. Powered by Shopify.
+                    </p>
+                    <img alt="" height="20" src="img/108.webp" width="40%"/>
+</body>
+</html>

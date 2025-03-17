@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <style>
+                  body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: white;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6b8e23;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .menu a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+        }
+        .navbar .menu a.shop {
+            position: relative;
+        }
+        .navbar .menu a.shop::after {
+            position: absolute;
+            top: -10px;
+            right: -20px;
+            color: white;
+            font-size: 10px;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .navbar .icons {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .icons i {
+            font-size: 18px;
+            color: black;
+        }
+        .shop {
+            background-image: url('img/tea18.webp');
+            background-size: cover;
+            padding: 50px 20px;
+            text-align: center;
+            color: rgb(236, 232, 232);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: bold;
+          color: white;
+        }
+        .breadcrumb {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #f2ecec;
+        }
+        .breadcrumb a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .text-content {
+            max-width: 600px;
+            margin-right: 20px;
+            font-size: 18px;
+        }
+        
+        .text-content h2 {
+            font-size: 14px;
+            font-weight: 400;
+            color: #8a8a8a;
+            letter-spacing: 2px;
+            margin: 10px 0 20px;
+            position: relative;
+        }
+        .text-content h2::before {
+            content: '';
+            width: 50px;
+            height: 2px;
+            background-color: #080808;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .text-content p {
+            font-size: 16px;
+            font-weight: 300;
+            color: #4a4a4a;
+            
+           
+        }
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 18px;
+        }
+        .cont {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .image-section {
+            flex: 1;
+        }
+        .image-section img {
+            width: 100%;
+            height: auto;
+        }
+        .text-section {
+            flex: 1;
+            padding-left: 50px;
+        }
+        .text-section h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .text-section h2 {
+            font-size: 14px;
+            font-weight: normal;
+            color: #a0a0a0;
+            letter-spacing: 2px;
+            margin: 10px 0 20px;
+            position: relative;
+        }
+        .text-section h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 50px;
+            height: 1px;
+            background-color: #a0a0a0;
+            transform: translateY(-50%);
+        }
+        .text-section p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin: 0 0 20px;
+        }
+        .page {
+          
+            color: #ffffff;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80vh;
+            background-image: url('img/tea21.webp');
+            background-size: cover;
+            
+        }
+        .item {
+            text-align: center;
+            max-width: 300px;
+        }
+        .item i {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .item h3 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .item p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .item hr {
+            width: 50px;
+            border: 1px solid white;
+            margin: 20px auto;
+        }
+        .container01 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .description {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        .team {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .team-member {
+            width: 30%;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .team-member img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .team-member h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 10px 0 5px;
+        }
+        .team-member p {
+            font-size: 16px;
+            font-weight: 400;
+            color: #777;
+        }
+        .divider {
+            width: 50px;
+            height: 3px;
+            background-color: #6b8e23;
+            margin: 20px auto;
+        }
+        .NEWS {
+            display: flex;
+            align-items: center;
+            background-color: #b3b3b3;
+            justify-self: center;
+            width: 100%;
+        }
+        .newsletter {
+            display: flex;
+            align-items: center;
+        }
+        .newsletter-icon {
+            font-size: 64px;
+            color: #ffffff;
+            margin-right: 20px;
+        }
+        .newsletter-text {
+            color: #ffffff;
+        }
+        .newsletter-text h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .newsletter-text p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+        }
+        .divider {
+            height: 100px;
+            width: 1px;
+            background-color: #ffffff;
+            margin: 0 20px;
+        }
+        .email-form {
+            display: flex;
+            align-items: center;
+        }
+        .email-input {
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            outline: none;
+            width: 300px;
+        }
+        .submit-button {
+            padding: 10px 20px;
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .gallery {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+        }
+        .gallery img {
+            width: 20%;
+            height: auto;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 100px;
+            background-color: #f9f9f9;
+        }
+        .footer-column {
+            flex: 1;
+            margin: 0 20px;
+        }
+        .footer-column h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .footer-column h3::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 2px;
+            background-color: #000;
+            margin-top: 5px;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #000;
+        }
+        .footer-logo {
+            font-size: 36px;
+            font-family: 'Georgia', serif;
+            color: #6b8e23;
+        }
+        .footer-logo p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        .footer-social {
+            margin-top: 20px;
+        }
+        .footer-social a {
+            margin-right: 10px;
+            color: #000;
+            font-size: 20px;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-top: 1px solid #eaeaea;
+        }
+        .footer-bottom p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .footer-bottom img {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+     <div class="navbar">
+        <div class="logo">
+         Teami
+        </div>
+        <div class="menu">
+         <a href="#">
+          Home
+         </a>
+         <a class="" href="#">
+          Shop
+         </a>
+         <a href="teaFeatured.html">
+          Featured
+         </a>
+         <a href="#">
+          Pages
+         </a>
+         <a href="teabloge.html">
+          Blogs
+         </a>
+        </div>
+        <div class="icons">
+         <i class="fas fa-search">
+         </i>
+         <i class="fas fa-user">
+         </i>
+         <i class="fas fa-heart">
+         </i>
+         <i class="fas fa-shopping-bag">
+         </i>
+        </div>
+       </div>
+       <div class="shop">
+        <h1>About Us</h1>
+        <div class="breadcrumb">
+            <a href="#">Home</a> &gt; <a href="#">About Us</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="text-content">
+         <h1>
+          Our Story
+         </h1>
+         <h2>
+          THE HIGH STRESS FAVOURITE
+         </h2>
+         <p>
+          Praesent metus tellus, elementum eu, semper a, adipiscing nec, purus. Vestibulum volutpat pretium libero. In ut quam vitae odio lacinia tincidunt. Etiam ut purus mattis mauris sodales aliquam. Aenean massa.
+         </p>
+         <p>
+          In dui magna, posuere eget, vestibulum et, tempor auctor, justo. Vivamus consectetuer hendrerit lacus. In hac habitasse platea dictumst. Ut tincidunt tincidunt erat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+         </p>
+        </div>
+        <div class="image-content">
+         <img alt="" height="400" src="img/tea19.webp" width="600"/>
+        </div>
+       </div>
+       <div class="cont">
+        <div class="image-section">
+         <img alt="" height="400" src="img/tea20.webp" width="600"/>
+        </div>
+        <div class="text-section">
+         <h1>
+          Who We Are ?
+         </h1>
+         <h2>
+          THE HIGH STRESS FAVOURITE
+         </h2>
+         <p>
+          Praesent metus tellus, elementum eu, semper a, adipiscing nec, purus. Vestibulum volutpat pretium libero. In ut quam vitae odio lacinia tincidunt. Etiam ut purus mattis mauris sodales aliquam. Aenean massa.
+         </p>
+         <p>
+          In dui magna, posuere eget, vestibulum et, tempor auctor, justo. Vivamus consectetuer hendrerit lacus. In hac habitasse platea dictumst. Ut tincidunt tincidunt erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+         </p>
+        </div>
+       </div>
+       <div class="page">
+        <div class="item">
+            <i class="fas fa-gem"></i>
+            <h3>Design</h3>
+            <hr>
+            <p>Praesent metus tellus, elementum eu, semper Vestibulum volutpat pretium libero</p>
+        </div>
+        <div class="item">
+            <i class="fas fa-leaf"></i>
+            <h3>Inovation</h3>
+            <hr>
+            <p>Praesent metus tellus, elementum eu, semper Vestibulum volutpat pretium libero</p>
+        </div>
+        <div class="item">
+            <i class="fas fa-road"></i>
+            <h3>Journey</h3>
+            <hr>
+            <p>Praesent metus tellus, elementum eu, semper Vestibulum volutpat pretium libero</p>
+        </div>
+    </div>
+    <div class="container01">
+        <h1>
+         Behind The Brands
+        </h1>
+        <div class="description">
+         We are a female-founded, 100% woman-led team of collaborative dreamers who value innovation, curiosity and free-thinking fearlessness in everything that we do. We take immeasurable pride in our work, intentionally stitching love into the very fiber and fabric of our designs. We are small, but we are a mighty group of talented individuals dedicated to bringing you otherworldly designs with imagery to match.
+        </div>
+        <div class="divider">
+        </div>
+        <div class="team">
+         <div class="team-member">
+          <img alt="" height="400" src="img/tea22.webp" width="300"/>
+          <h3>
+           Adrian Stone
+          </h3>
+          <p>
+           Ceo
+          </p>
+         </div>
+         <div class="team-member">
+          <img alt="" height="400" src="img/tea23.webp" width="300"/>
+          <h3>
+           Ferguson
+          </h3>
+          <p>
+           Designer
+          </p>
+         </div>
+         <div class="team-member">
+          <img alt="" height="400" src="img/tea24.webp" width="300"/>
+          <h3>
+           Saga Norén
+          </h3>
+          <p>
+           Developer
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="NEWS">
+        <div class="newsletter">
+            <i class="fas fa-envelope newsletter-icon"></i>
+            <div class="newsletter-text">
+                <h2>OUR NEWSLETTER!</h2>
+                <p>It only takes a second to be the first to find out about our latest news</p>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="email-form">
+            <input type="email" class="email-input" placeholder="Your email address...">
+            <button class="submit-button">SUBMIT</button>
+        </div>
+    </div>
+    <div class="gallery">
+        <img alt="" height="300" src="img/tea25.webp" width="400"/>
+        <img alt="" height="300" src="img/tea26.webp" width="400"/>
+        <img alt="" height="300" src="img/tea27.webp" width="400"/>
+        <img alt="" height="300" src="img/tea28.webp" width="400"/>
+        <img alt="" height="300" src="img/tea29.webp" width="400"/>
+       
+       </div>
+       <div class="footer">
+        <div class="footer-column">
+         <div class="footer-logo">
+          Teami
+         </div>
+         <p>
+          Sophisticated simplicity for the independent mind.
+         </p>
+         <div class="footer-social">
+          <a href="#">
+            <i class="fa-brands fa-twitter"></i>
+           </i>
+          </a>
+          <a href="#">
+            <i class="fa-brands fa-dribbble"></i>
+          </a>
+          <a href="#">
+            <i class="fa-brands fa-behance"></i>
+          </a>
+          <a href="#">
+           <i class="fa-brands fa-instagram"></i>
+          </a>
+         </div>
+        </div>
+        <div class="footer-column">
+         <h3>
+          Help &amp; Information
+         </h3>
+         <ul>
+          <li>
+           <a href="#">
+            About Us
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Privacy Policy
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Terms &amp; Conditions
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Products Return
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Wholesale Policy
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="footer-column">
+         <h3>
+          About Us
+         </h3>
+         <ul>
+          <li>
+           <a href="#">
+            Pagination
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Terms &amp; Conditions
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Contact
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Accessories
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Home Page
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="footer-column">
+         <h3>
+          Categories
+         </h3>
+         <ul>
+          <li>
+           <a href="#">
+            Menu items
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Help Center
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Address Store
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Privacy Policy
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            HomePage
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="footer-bottom">
+        <p>
+         © Copyright 2024 | Teami By EngoTheme. Powered by Shopify.
+        </p>
+        <img alt="" height="20" src="img/108.webp" width="40%"/>
+</body>
+</html>
